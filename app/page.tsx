@@ -44,8 +44,8 @@ export default function SignInPage() {
       </header>
 
       {/* Main Content - Fits remaining space */}
-      <main className="flex-1 w-full flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-0 overflow-hidden">
-        <div className="w-full max-w-[1360px] flex flex-col lg:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-[20px] items-center lg:items-start justify-center h-full">
+      <main className="flex-1 w-full flex items-start justify-center px-4 sm:px-6 md:px-8 lg:px-0 overflow-hidden pt-4 sm:pt-6 md:pt-8">
+        <div className="w-full max-w-[1600px] flex flex-col lg:flex-row gap-3 sm:gap-4 md:gap-5 lg:gap-[20px] items-start justify-start">
           <SignInForm />
           <MarketingContent />
         </div>

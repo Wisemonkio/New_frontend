@@ -30,11 +30,11 @@ const companies = [
 
 export default function MarketingContent() {
   return (
-    <div className="content-stretch flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 h-full items-center justify-center relative shrink-0 w-full lg:w-[760px] px-0 py-2 sm:py-3 md:py-4 lg:py-6 xl:py-8 bg-transparent rounded-2xl lg:rounded-none overflow-hidden">
+    <div className="content-stretch flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 items-center justify-start relative shrink-0 w-full lg:w-[850px] px-0 py-2 sm:py-3 md:py-4 lg:py-4 bg-transparent rounded-2xl lg:rounded-none overflow-hidden">
       <div className="content-stretch flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 items-center relative shrink-0 w-full">
         {/* Info Header */}
         <div className="content-stretch flex flex-col font-satoshi font-bold gap-2 sm:gap-3 items-center leading-tight not-italic relative shrink-0 text-center w-full max-w-[668px]">
-          <div className="relative shrink-0 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[40px] text-grey-700 w-full max-w-[656px]">
+          <div className="relative shrink-0 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[32px] text-grey-700 w-full max-w-[656px]">
             <p className="mb-0">Hire in India. Fast, Compliant,</p>
             <p>Fully Managed.</p>
           </div>
@@ -68,7 +68,7 @@ export default function MarketingContent() {
                       : {}
                   }
                 >
-                  <div className="relative shrink-0 size-8 sm:size-10 md:size-12 lg:size-[50px] flex items-center justify-center">
+                  <div className="relative shrink-0 size-6 sm:size-8 md:size-10 lg:size-[40px] flex items-center justify-center">
                     <img
                       alt={`${company.name} logo`}
                       className="max-w-full max-h-full w-full h-full object-contain pointer-events-none"
@@ -103,7 +103,7 @@ export default function MarketingContent() {
                       : {}
                   }
                 >
-                  <div className="relative shrink-0 size-8 sm:size-10 md:size-12 lg:size-[50px] flex items-center justify-center">
+                  <div className="relative shrink-0 size-6 sm:size-8 md:size-10 lg:size-[40px] flex items-center justify-center">
                     <img
                       alt={`${company.name} logo`}
                       className="max-w-full max-h-full w-full h-full object-contain pointer-events-none"
