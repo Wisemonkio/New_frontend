@@ -1,17 +1,18 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 
-export default function SignInForm() {
-  const [email, setEmail] = useState('')
+export default function SignUpForm() {
+  const [email, setEmail] = useState('abc@wisemonk.co')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission
-    console.log('Sign in:', { email, password })
+    console.log('Sign up:', { email, password, confirmPassword })
   }
 
   return (
@@ -22,17 +23,17 @@ export default function SignInForm() {
           <div className="content-stretch flex flex-col gap-2 items-center relative shrink-0 w-full">
             <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
               <h1 className="font-satoshi font-bold leading-tight not-italic relative shrink-0 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[32px] text-grey-700 whitespace-nowrap">
-                Welcome back to Wisemonk
+                Create your workspace
               </h1>
             </div>
             <p className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-sm sm:text-base text-grey-500 w-full mt-1">
-              Sign in to manage your team, payroll, and compliance.
+              Enter your work email to start building your India team.
             </p>
           </div>
 
           {/* Form Body */}
-          <form onSubmit={handleSubmit} className="content-stretch flex flex-col gap-4 sm:gap-6 items-start relative shrink-0 w-full">
-            {/* Google Sign In Button */}
+          <form onSubmit={handleSubmit} className="content-stretch flex flex-col gap-4 sm:gap-5 md:gap-6 items-start relative shrink-0 w-full">
+            {/* Google Sign Up Button */}
             <button
               type="button"
               className="border border-grey-200 border-solid content-stretch flex gap-2 h-12 sm:h-[52px] items-center justify-center px-4 sm:px-5 md:px-[20px] py-3 sm:py-[14px] relative rounded-xl shrink-0 w-full hover:bg-grey-200 transition-colors"
@@ -47,7 +48,7 @@ export default function SignInForm() {
                 </div>
               </div>
               <p className="font-satoshi font-bold leading-normal not-italic relative shrink-0 text-sm sm:text-base text-grey-700">
-                Sign in with Google
+                Sign up with Google
               </p>
             </button>
 
@@ -60,7 +61,7 @@ export default function SignInForm() {
                       <img 
                         alt="" 
                         className="block max-w-none size-full" 
-                        src="https://www.figma.com/api/mcp/asset/d0f7edbf-aee6-4a64-b980-36ca4ef41a32" 
+                        src="https://www.figma.com/api/mcp/asset/39357add-4ab0-40f9-a486-b06511745704" 
                       />
                     </div>
                   </div>
@@ -78,7 +79,7 @@ export default function SignInForm() {
                       <img 
                         alt="" 
                         className="block max-w-none size-full" 
-                        src="https://www.figma.com/api/mcp/asset/d0f7edbf-aee6-4a64-b980-36ca4ef41a32" 
+                        src="https://www.figma.com/api/mcp/asset/39357add-4ab0-40f9-a486-b06511745704" 
                       />
                     </div>
                   </div>
@@ -89,17 +90,21 @@ export default function SignInForm() {
             {/* Input Fields */}
             <div className="content-stretch flex flex-col gap-4 sm:gap-5 items-start relative shrink-0 w-full">
               {/* Email Input */}
-              <div className="h-12 sm:h-[47px] relative shrink-0 w-full">
-                <div className="absolute bg-white border border-grey-200 border-solid content-stretch flex flex-col items-start left-0 overflow-clip px-3 sm:px-[14px] py-2.5 sm:py-3 md:py-[12px] rounded-lg top-0 w-full focus-within:border-primary-base transition-colors">
-                  <div className="content-stretch flex items-center relative shrink-0 w-full">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Work email*"
-                      className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-sm sm:text-base text-grey-300 w-full outline-none bg-transparent placeholder:text-grey-300"
-                      required
-                    />
+              <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+                <div className="bg-white border border-grey-200 border-solid content-stretch flex flex-col items-start overflow-clip px-3 sm:px-[14px] py-2.5 sm:py-3 md:py-[12px] relative rounded-lg shrink-0 w-full focus-within:border-primary-base transition-colors">
+                  <div className="content-stretch flex flex-col gap-[2px] items-start justify-center relative shrink-0 w-full">
+                    <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500">
+                      Work email*
+                    </label>
+                    <div className="content-stretch flex items-center relative shrink-0 w-full">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-sm sm:text-base text-grey-700 w-full outline-none bg-transparent"
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -112,7 +117,7 @@ export default function SignInForm() {
                       type={showPassword ? 'text' : 'password'}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      placeholder="Password*"
+                      placeholder="Create password*"
                       className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-sm sm:text-base text-grey-300 w-full outline-none bg-transparent placeholder:text-grey-300"
                       required
                     />
@@ -124,54 +129,70 @@ export default function SignInForm() {
                       <img 
                         alt={showPassword ? 'Hide password' : 'Show password'} 
                         className="block max-w-none size-full" 
-                        src="https://www.figma.com/api/mcp/asset/3b96ea7c-bb01-4388-924f-56d8a5ebd5dc" 
+                        src="https://www.figma.com/api/mcp/asset/9eb3833e-eaf9-433e-bb81-979399212e00" 
                       />
                     </button>
                   </div>
                 </div>
               </div>
 
-              {/* Sign In Button */}
+              {/* Confirm Password Input */}
+              <div className="h-12 sm:h-[47px] relative shrink-0 w-full">
+                <div className="absolute bg-white border border-grey-200 border-solid content-stretch flex flex-col items-start left-0 overflow-clip px-3 sm:px-[14px] py-2.5 sm:py-3 md:py-[12px] rounded-lg top-0 w-full focus-within:border-primary-base transition-colors">
+                  <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
+                    <input
+                      type={showConfirmPassword ? 'text' : 'password'}
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      placeholder="Confirm password*"
+                      className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-sm sm:text-base text-grey-300 w-full outline-none bg-transparent placeholder:text-grey-300"
+                      required
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                      className="h-5 sm:h-[23px] relative shrink-0 w-5 sm:w-6 cursor-pointer hover:opacity-70 transition-opacity ml-2"
+                    >
+                      <img 
+                        alt={showConfirmPassword ? 'Hide password' : 'Show password'} 
+                        className="block max-w-none size-full" 
+                        src="https://www.figma.com/api/mcp/asset/9eb3833e-eaf9-433e-bb81-979399212e00" 
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Get Started Button */}
               <button
                 type="submit"
                 className="bg-primary-base content-stretch cursor-pointer flex items-center justify-center px-4 sm:px-8 md:px-[135.5px] py-3 sm:py-3.5 md:py-[15px] relative rounded-lg shrink-0 w-full hover:opacity-90 transition-opacity"
               >
                 <p className="font-satoshi font-bold leading-normal not-italic relative shrink-0 text-sm sm:text-base text-white text-center sm:text-left">
-                  Sign in
+                  Get Started
                 </p>
               </button>
-
-              {/* Sign Up Link */}
-              <p className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-600 text-center w-full">
-                <span>Don't have an account yet? </span>
-                <Link 
-                  className="[text-underline-position:from-font] cursor-pointer decoration-solid underline hover:text-primary-base transition-colors" 
-                  href="/signup"
-                >
-                  Create your workspace
-                </Link>
-              </p>
             </div>
           </form>
         </div>
 
         {/* Legal Text */}
         <p className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500 text-center px-2">
-          <span>By continuing, you agree to Wisemonk's </span>
+          <span>By creating an account, you agree to the </span>
           <a 
-            className="[text-underline-position:from-font] cursor-pointer decoration-solid underline hover:text-primary-base transition-colors" 
+            className="[text-underline-position:from-font] cursor-pointer decoration-solid underline hover:text-primary-base transition-colors text-grey-700" 
             href="#"
           >
             Terms & Conditions
           </a>
-          <span> and </span>
+          <span className="text-grey-700">, </span>
           <a 
-            className="[text-underline-position:from-font] cursor-pointer decoration-solid underline hover:text-primary-base transition-colors" 
+            className="[text-underline-position:from-font] cursor-pointer decoration-solid underline hover:text-primary-base transition-colors text-grey-700" 
             href="#"
           >
             Privacy Policy
           </a>
-          .
+          <span className="text-grey-500">,</span>
         </p>
       </div>
     </div>

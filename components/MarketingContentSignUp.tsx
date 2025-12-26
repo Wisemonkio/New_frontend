@@ -28,7 +28,7 @@ const companies = [
   },
 ]
 
-export default function MarketingContent() {
+export default function MarketingContentSignUp() {
   return (
     <div className="content-stretch flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 h-full items-center justify-center relative shrink-0 w-full lg:w-[760px] px-0 py-2 sm:py-3 md:py-4 lg:py-6 xl:py-8 bg-transparent rounded-2xl lg:rounded-none overflow-hidden">
       <div className="content-stretch flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 items-center relative shrink-0 w-full">
