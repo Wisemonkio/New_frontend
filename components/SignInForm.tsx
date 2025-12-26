@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 
 export default function SignInForm() {
   const [email, setEmail] = useState('')
@@ -140,24 +139,13 @@ export default function SignInForm() {
                   Sign in
                 </p>
               </button>
-
-              {/* Sign Up Link */}
-              <p className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-600 text-center w-full">
-                <span>Don't have an account yet? </span>
-                <Link 
-                  className="[text-underline-position:from-font] cursor-pointer decoration-solid underline hover:text-primary-base transition-colors" 
-                  href="/signup"
-                >
-                  Create your workspace
-                </Link>
-              </p>
             </div>
           </form>
         </div>
 
         {/* Legal Text */}
-        <p className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500 text-center px-2">
-          <span>By continuing, you agree to Wisemonk's </span>
+        <p className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500 text-center px-2 whitespace-nowrap">
+          <span>By continuing, you agree to our </span>
           <a 
             className="[text-underline-position:from-font] cursor-pointer decoration-solid underline hover:text-primary-base transition-colors" 
             href="#"

@@ -128,7 +128,7 @@ export default function MarketingContent() {
           "Wisemonk helped us tap into the vibrant and top-notch Indian talent market."
         </p>
         <div className="content-stretch flex flex-col gap-0.5 sm:gap-1 items-center leading-normal not-italic relative shrink-0 w-full max-w-[195px]">
-          <p className="font-satoshi font-bold relative shrink-0 text-xs sm:text-sm md:text-base lg:text-lg text-grey-700 w-full text-center">
+          <p className="font-satoshi font-bold relative shrink-0 text-xs sm:text-sm md:text-base lg:text-lg text-grey-700 w-full text-center whitespace-nowrap">
             Krishna Ramachandran
           </p>
           <p className="font-satoshi font-medium relative shrink-0 text-xs sm:text-sm md:text-base text-grey-500 text-center w-full">

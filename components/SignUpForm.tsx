@@ -177,22 +177,22 @@ export default function SignUpForm() {
         </div>
 
         {/* Legal Text */}
-        <p className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500 text-center px-2">
-          <span>By creating an account, you agree to the </span>
+        <p className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500 text-center px-2 whitespace-nowrap">
+          <span>By continuing, you agree to our </span>
           <a 
             className="[text-underline-position:from-font] cursor-pointer decoration-solid underline hover:text-primary-base transition-colors text-grey-700" 
             href="#"
           >
             Terms & Conditions
           </a>
-          <span className="text-grey-700">, </span>
+          <span className="text-grey-700"> and </span>
           <a 
             className="[text-underline-position:from-font] cursor-pointer decoration-solid underline hover:text-primary-base transition-colors text-grey-700" 
             href="#"
           >
             Privacy Policy
           </a>
-          <span className="text-grey-500">,</span>
+          .
         </p>
       </div>
     </div>
