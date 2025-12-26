@@ -139,7 +139,7 @@ export default function SignUpForm() {
                         <img 
                           alt={showPassword ? 'Hide password' : 'Show password'} 
                           className="block max-w-none size-full" 
-                          src="https://www.figma.com/api/mcp/asset/9eb3833e-eaf9-433e-bb81-979399212e00" 
+                          src="/images/visibility-icon.svg" 
                         />
                       </button>
                     </div>
@@ -173,7 +173,7 @@ export default function SignUpForm() {
                         <img 
                           alt={showConfirmPassword ? 'Hide password' : 'Show password'} 
                           className="block max-w-none size-full" 
-                          src="https://www.figma.com/api/mcp/asset/9eb3833e-eaf9-433e-bb81-979399212e00" 
+                          src="/images/visibility-icon.svg" 
                         />
                       </button>
                     </div>

@@ -136,7 +136,7 @@ export default function SignInForm() {
                         <img 
                           alt={showPassword ? 'Hide password' : 'Show password'} 
                           className="block max-w-none size-full" 
-                          src="https://www.figma.com/api/mcp/asset/3b96ea7c-bb01-4388-924f-56d8a5ebd5dc" 
+                          src="/images/visibility-icon.svg" 
                         />
                       </button>
                     </div>
