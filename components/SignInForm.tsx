@@ -5,24 +5,77 @@ import { useState } from 'react'
 export default function SignInForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(true)
-  const [isEmailFocused, setIsEmailFocused] = useState(false)
-  const [isPasswordFocused, setIsPasswordFocused] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
+  const [emailError, setEmailError] = useState('')
+  const [passwordError, setPasswordError] = useState('')
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!email) {
+      return 'Email is required'
+    }
+    if (!emailRegex.test(email)) {
+      return 'Please enter a valid email address'
+    }
+    return ''
+  }
+
+  const validatePassword = (password: string) => {
+    if (!password) {
+      return 'Password is required'
+    }
+    if (password.length < 8) {
+      return 'Password must be at least 8 characters long'
+    }
+    return ''
+  }
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    setEmail(value)
+    if (emailError) {
+      setEmailError(validateEmail(value))
+    }
+  }
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    setPassword(value)
+    if (passwordError) {
+      setPasswordError(validatePassword(value))
+    }
+  }
+
+  const handleEmailBlur = () => {
+    setEmailError(validateEmail(email))
+  }
+
+  const handlePasswordBlur = () => {
+    setPasswordError(validatePassword(password))
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Sign in:', { email, password })
+    const emailErr = validateEmail(email)
+    const passwordErr = validatePassword(password)
+    
+    setEmailError(emailErr)
+    setPasswordError(passwordErr)
+    
+    if (!emailErr && !passwordErr) {
+      // Handle form submission
+      console.log('Sign in:', { email, password })
+    }
   }
 
   return (
-    <div className="flex flex-row items-start self-stretch w-full lg:w-[1100px] h-full mt-8 sm:mt-10 md:mt-12">
+    <div className="flex flex-row items-start self-stretch w-full lg:w-[1100px] h-full mt-2 sm:mt-3 md:mt-4">
       <div className="content-stretch flex flex-col gap-2 sm:gap-3 md:gap-4 items-center justify-start p-2 sm:p-3 md:p-4 lg:p-4 relative shrink-0 w-full overflow-hidden">
         <div className="content-stretch flex flex-col gap-2 sm:gap-3 md:gap-4 items-start relative shrink-0 w-full">
           {/* Form Header */}
           <div className="content-stretch flex flex-col gap-1 items-center relative shrink-0 w-full">
             <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-              <h1 className="font-satoshi font-bold leading-tight not-italic relative shrink-0 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[32px] text-grey-700 whitespace-nowrap">
+              <h1 className="font-satoshi font-bold leading-tight not-italic relative shrink-0 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-grey-700 whitespace-nowrap">
                 Welcome back to Wisemonk
               </h1>
             </div>
@@ -36,7 +89,7 @@ export default function SignInForm() {
             {/* Google Sign In Button */}
             <button
               type="button"
-              className="border border-grey-200 border-solid content-stretch flex gap-2 h-11 sm:h-12 items-center justify-center px-4 sm:px-5 md:px-[20px] py-2.5 sm:py-3 relative rounded-xl shrink-0 w-full hover:bg-grey-200 transition-colors"
+              className="border border-grey-200 border-solid content-stretch flex gap-2 h-9 sm:h-10 items-center justify-center px-4 sm:px-5 md:px-[20px] py-1.5 sm:py-2 relative rounded-xl shrink-0 w-full hover:bg-grey-200 transition-colors"
             >
               <div className="overflow-clip relative shrink-0 size-5 sm:size-6">
                 <div className="absolute left-1/2 size-5 sm:size-[20px] top-1/2 translate-x-[-50%] translate-y-[-50%]">
@@ -53,46 +106,24 @@ export default function SignInForm() {
             </button>
 
             {/* Divider */}
-            <div className="content-stretch flex items-center justify-center relative shrink-0 w-full" style={{ gap: '16px', alignSelf: 'stretch' }}>
-              <div className="flex flex-[1_0_0] items-center justify-center min-h-px min-w-px relative shrink-0">
-                <div className="flex-none rotate-[180deg] w-full">
-                  <div className="h-0 relative w-full">
-                    <div className="absolute inset-[-1px_0_0_0]">
-                      <div 
-                        className="block h-px" 
-                        style={{ width: '162.5px', background: '#D3D4D6' }}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="content-stretch flex gap-1 items-center justify-center px-2 sm:px-[10px] py-1 sm:py-[4px] relative rounded-[40px] shrink-0">
-                <p className="font-inter font-normal leading-6 not-italic relative shrink-0 text-xs sm:text-sm md:text-base text-grey-300 whitespace-nowrap">
+            <div className="flex items-center w-full gap-4">
+              <div className="flex-1 h-px bg-grey-200"></div>
+              <div className="flex items-center justify-center px-2 sm:px-[10px] py-1 sm:py-[4px] shrink-0">
+                <p className="font-inter font-normal leading-6 not-italic text-xs sm:text-sm md:text-base text-grey-300 whitespace-nowrap">
                   or continue with
                 </p>
               </div>
-              <div className="flex flex-[1_0_0] items-center justify-center min-h-px min-w-px relative shrink-0">
-                <div className="flex-none rotate-[180deg] w-full">
-                  <div className="h-0 relative w-full">
-                    <div className="absolute inset-[-1px_0_0_0]">
-                      <div 
-                        className="block h-px" 
-                        style={{ width: '162.5px', background: '#D3D4D6' }}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div className="flex-1 h-px bg-grey-200"></div>
             </div>
 
             {/* Input Fields */}
-            <div className="content-stretch flex flex-col gap-3 sm:gap-4 items-start relative shrink-0 w-full min-w-full">
+            <div className="content-stretch flex flex-col gap-2 sm:gap-3 items-start relative shrink-0 w-full min-w-full">
               {/* Email Input */}
-              <div className="content-stretch flex flex-col gap-3 items-start relative shrink-0 w-full">
-                <div className="bg-white border border-grey-200 border-solid content-stretch flex flex-col items-start overflow-clip px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-[10px] relative rounded-lg shrink-0 w-full focus-within:border-primary-base transition-colors">
-                  <div className={`content-stretch flex flex-col ${email ? 'gap-[2px]' : 'gap-0'} items-start justify-center relative shrink-0 w-full`}>
+              <div className="content-stretch flex flex-col gap-1 items-start relative shrink-0 w-full">
+                <div className={`bg-white border ${emailError ? 'border-red-500' : 'border-grey-200'} border-solid content-stretch flex flex-col items-start overflow-clip px-3 sm:px-4 ${email ? 'py-1 sm:py-1.5' : 'py-1.5 sm:py-2'} relative rounded-lg shrink-0 w-full focus-within:border-primary-base transition-colors`}>
+                  <div className={`content-stretch flex flex-col ${email ? 'gap-0.5' : 'gap-0'} items-start justify-center relative shrink-0 w-full`}>
                     {email && (
-                      <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500">
+                      <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs text-grey-500">
                         Work email*
                       </label>
                     )}
@@ -100,7 +131,8 @@ export default function SignInForm() {
                       <input
                         type="email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={handleEmailChange}
+                        onBlur={handleEmailBlur}
                         placeholder={email ? '' : 'Work email*'}
                         className={`font-satoshi font-medium leading-normal not-italic relative shrink-0 text-sm sm:text-base w-full outline-none bg-transparent ${email ? 'text-grey-700' : 'text-grey-300 placeholder:text-grey-300'}`}
                         required
@@ -108,14 +140,19 @@ export default function SignInForm() {
                     </div>
                   </div>
                 </div>
+                {emailError && (
+                  <p className="font-satoshi font-medium text-xs sm:text-sm text-red-500">
+                    {emailError}
+                  </p>
+                )}
               </div>
 
               {/* Password Input */}
-              <div className="content-stretch flex flex-col gap-3 items-start relative shrink-0 w-full">
-                <div className="bg-white border border-grey-200 border-solid content-stretch flex flex-col items-start overflow-visible px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-[10px] relative rounded-lg shrink-0 w-full focus-within:border-primary-base transition-colors">
-                  <div className={`content-stretch flex flex-col ${password ? 'gap-[2px]' : 'gap-0'} items-start justify-center relative shrink-0 w-full`}>
+              <div className="content-stretch flex flex-col gap-1 items-start relative shrink-0 w-full">
+                <div className={`bg-white border ${passwordError ? 'border-red-500' : 'border-grey-200'} border-solid content-stretch flex flex-col items-start overflow-visible px-3 sm:px-4 ${password ? 'py-1 sm:py-1.5' : 'py-1.5 sm:py-2'} relative rounded-lg shrink-0 w-full focus-within:border-primary-base transition-colors`}>
+                  <div className={`content-stretch flex flex-col ${password ? 'gap-0.5' : 'gap-0'} items-start justify-center relative shrink-0 w-full`}>
                     {password && (
-                      <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500">
+                      <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs text-grey-500">
                         Password*
                       </label>
                     )}
@@ -123,7 +160,8 @@ export default function SignInForm() {
                       <input
                         type={showPassword ? 'text' : 'password'}
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={handlePasswordChange}
+                        onBlur={handlePasswordBlur}
                         placeholder={password ? '' : 'Password*'}
                         className={`font-satoshi font-medium leading-normal not-italic relative flex-1 text-sm sm:text-base outline-none bg-transparent ${password ? 'text-grey-700' : 'text-grey-300 placeholder:text-grey-300'}`}
                         required
@@ -142,12 +180,17 @@ export default function SignInForm() {
                     </div>
                   </div>
                 </div>
+                {passwordError && (
+                  <p className="font-satoshi font-medium text-xs sm:text-sm text-red-500">
+                    {passwordError}
+                  </p>
+                )}
               </div>
 
               {/* Sign In Button */}
               <button
                 type="submit"
-                className="bg-primary-base content-stretch cursor-pointer flex items-center justify-center px-4 sm:px-8 md:px-[135.5px] py-2.5 sm:py-3 md:py-[12px] relative rounded-lg shrink-0 w-full hover:opacity-90 transition-opacity"
+                className="bg-primary-base content-stretch cursor-pointer flex items-center justify-center px-4 sm:px-8 md:px-[135.5px] py-1.5 sm:py-2 relative rounded-lg shrink-0 w-full hover:opacity-90 transition-opacity"
               >
                 <p className="font-satoshi font-bold leading-normal not-italic relative shrink-0 text-sm sm:text-base text-white text-center sm:text-left">
                   Sign in
