@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Satoshi', 'Inter', sans-serif;
+}
+
+
+
