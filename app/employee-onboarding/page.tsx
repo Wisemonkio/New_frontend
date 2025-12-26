@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import EmployeeDashboard from '@/components/EmployeeDashboard'
 
 export default function EmployeeOnboardingPage() {
   const router = useRouter()
@@ -44,19 +45,6 @@ export default function EmployeeOnboardingPage() {
     }
   }, [router])
 
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-[#f1f8ff]">
-      <div className="text-center">
-        <h1 className="text-2xl font-bold text-grey-700 mb-4">Employee Onboarding</h1>
-        <p className="text-grey-600 mb-6">
-          Welcome! Please complete your employee onboarding.
-        </p>
-        <p className="text-sm text-grey-500">
-          This page will be implemented with the employee onboarding flow.
-        </p>
-      </div>
-    </div>
-  )
+  return <EmployeeDashboard />
 }
-
 

@@ -36,4 +36,3 @@ export default function VerifyEmailPage() {
   return <VerifyEmail email={email} />
 }
 
-

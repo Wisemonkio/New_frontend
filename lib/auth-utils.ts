@@ -100,4 +100,3 @@ export function getOrganizationId(): string | null {
   return localStorage.getItem('organizationId')
 }
 
-

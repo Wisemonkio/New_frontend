@@ -558,26 +558,26 @@ export default function SignUpForm() {
 
   return (
     <div className="flex flex-row items-start self-stretch w-full lg:w-[1100px] h-full">
-      <div className="content-stretch flex flex-col gap-1 sm:gap-1.5 items-center justify-start p-1.5 sm:p-2 md:p-3 relative shrink-0 w-full max-w-full overflow-hidden">
-        <div className="content-stretch flex flex-col gap-1 sm:gap-1.5 items-start relative shrink-0 w-full">
+      <div className="content-stretch flex flex-col gap-2 sm:gap-3 items-center justify-start p-2 sm:p-3 md:p-4 relative shrink-0 w-full max-w-full overflow-hidden">
+        <div className="content-stretch flex flex-col gap-2 sm:gap-3 md:gap-4 items-start relative shrink-0 w-full">
           {/* Form Header */}
-          <div className="content-stretch flex flex-col gap-0.5 items-center relative shrink-0 w-full">
+          <div className="content-stretch flex flex-col gap-1 items-center relative shrink-0 w-full">
             <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-              <h1 className="font-satoshi font-bold leading-tight not-italic relative shrink-0 text-sm sm:text-base md:text-lg lg:text-xl text-grey-700 whitespace-nowrap">
+              <h1 className="font-satoshi font-bold leading-tight not-italic relative shrink-0 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[32px] text-grey-700 whitespace-nowrap">
                 Create your workspace
               </h1>
             </div>
-            <p className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs text-grey-500 w-full">
+            <p className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-sm sm:text-base text-grey-500 w-full mt-1">
               Enter your work email to start building your India team.
             </p>
           </div>
 
           {/* Form Body */}
-          <form onSubmit={handleSubmit} className="content-stretch flex flex-col gap-2 sm:gap-2.5 items-start relative shrink-0 w-full min-w-full">
+          <form onSubmit={handleSubmit} className="content-stretch flex flex-col gap-3 sm:gap-4 items-start relative shrink-0 w-full min-w-full">
             {/* Error Message */}
             {error && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-2 w-full">
-                <p className="text-red-600 text-xs font-satoshi">{error}</p>
+              <div className="bg-red-50 border border-red-200 rounded-lg p-3 w-full">
+                <p className="text-red-600 text-sm font-satoshi">{error}</p>
               </div>
             )}
 
@@ -589,10 +589,10 @@ export default function SignUpForm() {
               type="button"
               onClick={handleGoogleSignUp}
               disabled={isLoading}
-              className="border border-grey-200 border-solid content-stretch flex gap-1.5 h-9 sm:h-10 items-center justify-center px-3 sm:px-4 py-2 relative rounded-lg shrink-0 w-full hover:bg-grey-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full h-[38px] px-[18px] py-[9px] rounded-xl outline outline-1 outline-[rgb(211,212,214)] outline-offset-[-1px] flex items-center justify-center gap-2 cursor-pointer opacity-100 bg-white hover:bg-grey-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <div className="overflow-clip relative shrink-0 size-4 sm:size-5">
-                <div className="absolute left-1/2 size-4 sm:size-5 top-1/2 translate-x-[-50%] translate-y-[-50%]">
+              <div className="overflow-clip relative shrink-0 size-5 sm:size-6">
+                <div className="absolute left-1/2 size-5 sm:size-[20px] top-1/2 translate-x-[-50%] translate-y-[-50%]">
                   <img 
                     alt="Google Logo" 
                     className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" 
@@ -600,18 +600,18 @@ export default function SignUpForm() {
                   />
                 </div>
               </div>
-              <p className="font-satoshi font-bold leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-700">
+              <p className="font-satoshi font-bold leading-normal not-italic relative shrink-0 text-sm sm:text-base text-grey-700">
                 Sign up with Google
               </p>
             </button>
 
             {/* Divider */}
-            <div className="content-stretch flex items-center justify-center relative shrink-0 w-full gap-2 sm:gap-3">
+            <div className="content-stretch flex items-center justify-center relative shrink-0 w-full gap-[0.5rem]">
               <div className="flex flex-1 items-center justify-center min-h-px relative shrink-0">
                 <div className="w-full h-px bg-grey-200"></div>
               </div>
-              <div className="content-stretch flex gap-1 items-center justify-center px-2 py-0.5 relative rounded-[40px] shrink-0">
-                <p className="font-inter font-normal leading-6 not-italic relative shrink-0 text-xs sm:text-sm text-grey-300 whitespace-nowrap">
+              <div className="content-stretch flex gap-1 items-center justify-center px-2 sm:px-[10px] py-1 sm:py-[4px] relative rounded-[40px] shrink-0">
+                <p className="font-inter font-normal leading-6 not-italic relative shrink-0 text-xs sm:text-sm md:text-base text-grey-300 whitespace-nowrap">
                   or continue with
                 </p>
               </div>
@@ -621,15 +621,15 @@ export default function SignUpForm() {
             </div>
 
             {/* Input Fields */}
-            <div className="content-stretch flex flex-col gap-1.5 items-start relative shrink-0 w-full min-w-full">
+            <div className="content-stretch flex flex-col gap-2 items-start relative shrink-0 w-full min-w-full">
               {/* Email Input */}
-              <div className="content-stretch flex flex-col gap-1 items-start relative shrink-0 w-full">
-                <div className={`bg-white border border-solid content-stretch flex flex-col items-start overflow-visible px-2.5 sm:px-3 py-1.5 sm:py-2 relative rounded-lg shrink-0 w-full transition-colors ${
+              <div className="content-stretch flex flex-col gap-2 items-start relative shrink-0 w-full">
+                <div className={`bg-white border border-solid content-stretch flex flex-col items-start overflow-visible px-[0.3rem] py-[0.3rem] relative rounded-lg shrink-0 w-full transition-colors ${
                   emailError ? 'border-red-500' : 'border-grey-200 focus-within:border-primary-base'
                 }`}>
                   <div className={`content-stretch flex flex-col ${email ? 'gap-[2px]' : 'gap-0'} items-start justify-center relative shrink-0 w-full`}>
                     {email && (
-                      <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs text-grey-500">
+                      <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500">
                         Work email*
                       </label>
                     )}
@@ -641,29 +641,29 @@ export default function SignUpForm() {
                         onBlur={handleEmailBlur}
                         onFocus={() => setIsEmailFocused(true)}
                         placeholder={email ? '' : 'Work email*'}
-                        className={`font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm w-full outline-none bg-transparent ${email ? 'text-grey-700' : 'text-grey-300 placeholder:text-grey-300'}`}
+                        className={`font-satoshi font-medium leading-normal not-italic relative shrink-0 text-sm sm:text-base w-full outline-none bg-transparent px-[0.3rem] ${email ? 'text-grey-700' : 'text-grey-300 placeholder:text-grey-300'}`}
                         required
                       />
                     </div>
                   </div>
                 </div>
                 {emailError && (emailTouched || submitAttempted) && (
-                  <p className="text-red-500 text-xs font-satoshi">{emailError}</p>
+                  <p className="text-red-500 text-xs sm:text-sm font-satoshi mt-0.5">{emailError}</p>
                 )}
               </div>
 
               {/* Password Input */}
-              <div className="content-stretch flex flex-col gap-1 items-start relative shrink-0 w-full">
-                <div className={`bg-white border border-solid content-stretch flex flex-col items-start overflow-visible px-2.5 sm:px-3 py-1.5 sm:py-2 relative rounded-lg shrink-0 w-full transition-colors ${
+              <div className="content-stretch flex flex-col gap-2 items-start relative shrink-0 w-full">
+                <div className={`bg-white border border-solid content-stretch flex flex-col items-start overflow-visible px-[0.3rem] py-[0.3rem] relative rounded-lg shrink-0 w-full transition-colors ${
                   passwordError ? 'border-red-500' : 'border-grey-200 focus-within:border-primary-base'
                 }`}>
                   <div className={`content-stretch flex flex-col ${password ? 'gap-[2px]' : 'gap-0'} items-start justify-center relative shrink-0 w-full`}>
                     {password && (
-                      <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs text-grey-500">
+                      <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500">
                         Create password*
                       </label>
                     )}
-                    <div className="content-stretch flex items-center gap-1.5 relative shrink-0 w-full">
+                    <div className="content-stretch flex items-center gap-2 relative shrink-0 w-full">
                       <input
                         type={showPassword ? 'text' : 'password'}
                         value={password}
@@ -671,13 +671,13 @@ export default function SignUpForm() {
                         onBlur={handlePasswordBlur}
                         onFocus={() => setIsPasswordFocused(true)}
                         placeholder={password ? '' : 'Create password*'}
-                        className={`font-satoshi font-medium leading-normal not-italic relative flex-1 text-xs sm:text-sm outline-none bg-transparent ${password ? 'text-grey-700' : 'text-grey-300 placeholder:text-grey-300'}`}
+                        className={`font-satoshi font-medium leading-normal not-italic relative flex-1 text-sm sm:text-base outline-none bg-transparent px-[0.3rem] ${password ? 'text-grey-700' : 'text-grey-300 placeholder:text-grey-300'}`}
                         required
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="h-4 sm:h-5 relative shrink-0 w-4 sm:w-5 cursor-pointer hover:opacity-70 transition-opacity"
+                        className="h-5 sm:h-[23px] relative shrink-0 w-5 sm:w-6 cursor-pointer hover:opacity-70 transition-opacity"
                       >
                         <img 
                           alt={showPassword ? 'Hide password' : 'Show password'} 
@@ -689,22 +689,22 @@ export default function SignUpForm() {
                   </div>
                 </div>
                 {passwordError && (passwordTouched || submitAttempted) && (
-                  <p className="text-red-500 text-xs font-satoshi">{passwordError}</p>
+                  <p className="text-red-500 text-xs sm:text-sm font-satoshi mt-0.5">{passwordError}</p>
                 )}
               </div>
 
               {/* Confirm Password Input */}
-              <div className="content-stretch flex flex-col gap-1 items-start relative shrink-0 w-full">
-                <div className={`bg-white border border-solid content-stretch flex flex-col items-start overflow-visible px-2.5 sm:px-3 py-1.5 sm:py-2 relative rounded-lg shrink-0 w-full transition-colors ${
+              <div className="content-stretch flex flex-col gap-2 items-start relative shrink-0 w-full">
+                <div className={`bg-white border border-solid content-stretch flex flex-col items-start overflow-visible px-[0.3rem] py-[0.3rem] relative rounded-lg shrink-0 w-full transition-colors ${
                   confirmPasswordError ? 'border-red-500' : 'border-grey-200 focus-within:border-primary-base'
                 }`}>
                   <div className={`content-stretch flex flex-col ${confirmPassword ? 'gap-[2px]' : 'gap-0'} items-start justify-center relative shrink-0 w-full`}>
                     {confirmPassword && (
-                      <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs text-grey-500">
+                      <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500">
                         Confirm password*
                       </label>
                     )}
-                    <div className="content-stretch flex items-center gap-1.5 relative shrink-0 w-full">
+                    <div className="content-stretch flex items-center gap-2 relative shrink-0 w-full">
                       <input
                         type={showConfirmPassword ? 'text' : 'password'}
                         value={confirmPassword}
@@ -712,13 +712,13 @@ export default function SignUpForm() {
                         onBlur={handleConfirmPasswordBlur}
                         onFocus={() => setIsConfirmPasswordFocused(true)}
                         placeholder={confirmPassword ? '' : 'Confirm password*'}
-                        className={`font-satoshi font-medium leading-normal not-italic relative flex-1 text-xs sm:text-sm outline-none bg-transparent ${confirmPassword ? 'text-grey-700' : 'text-grey-300 placeholder:text-grey-300'}`}
+                        className={`font-satoshi font-medium leading-normal not-italic relative flex-1 text-sm sm:text-base outline-none bg-transparent px-[0.3rem] ${confirmPassword ? 'text-grey-700' : 'text-grey-300 placeholder:text-grey-300'}`}
                         required
                       />
                       <button
                         type="button"
                         onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                        className="h-4 sm:h-5 relative shrink-0 w-4 sm:w-5 cursor-pointer hover:opacity-70 transition-opacity"
+                        className="h-5 sm:h-[23px] relative shrink-0 w-5 sm:w-6 cursor-pointer hover:opacity-70 transition-opacity"
                       >
                         <img 
                           alt={showConfirmPassword ? 'Hide password' : 'Show password'} 
@@ -730,7 +730,7 @@ export default function SignUpForm() {
                   </div>
                 </div>
                 {confirmPasswordError && (confirmPasswordTouched || submitAttempted) && (
-                  <p className="text-red-500 text-xs font-satoshi">{confirmPasswordError}</p>
+                  <p className="text-red-500 text-xs sm:text-sm font-satoshi mt-0.5">{confirmPasswordError}</p>
                 )}
               </div>
 
@@ -738,9 +738,9 @@ export default function SignUpForm() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="bg-primary-base content-stretch cursor-pointer flex items-center justify-center px-3 sm:px-4 py-2 relative rounded-lg shrink-0 w-full hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-primary-base content-stretch cursor-pointer flex items-center justify-center px-4 sm:px-8 md:px-[135.5px] py-2.5 sm:py-3 md:py-[12px] relative rounded-lg shrink-0 w-full hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <p className="font-satoshi font-bold leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-white text-center">
+                <p className="font-satoshi font-bold leading-normal not-italic relative shrink-0 text-sm sm:text-base text-white text-center sm:text-left">
                   {isLoading ? 'Creating account...' : 'Get Started'}
                 </p>
               </button>
@@ -749,7 +749,7 @@ export default function SignUpForm() {
         </div>
 
         {/* Legal Text */}
-        <p className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs text-grey-500 text-center px-2 break-words">
+        <p className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500 text-center px-2 sm:px-4 break-words">
           <span>By continuing, you agree to our </span>
           <a 
             className="[text-underline-position:from-font] cursor-pointer decoration-solid underline hover:text-primary-base transition-colors text-grey-700" 

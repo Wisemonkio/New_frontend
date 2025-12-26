@@ -91,4 +91,3 @@ export function navigateBasedOnStatus(router: any) {
   router.push('/onboarding')
 }
 
-
