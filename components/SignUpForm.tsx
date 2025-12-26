@@ -56,16 +56,15 @@ export default function SignUpForm() {
             </button>
 
             {/* Divider */}
-            <div className="content-stretch flex gap-3 sm:gap-4 items-center justify-center relative shrink-0 w-full">
+            <div className="content-stretch flex items-center justify-center relative shrink-0 w-full" style={{ gap: '16px', alignSelf: 'stretch' }}>
               <div className="flex flex-[1_0_0] items-center justify-center min-h-px min-w-px relative shrink-0">
                 <div className="flex-none rotate-[180deg] w-full">
                   <div className="h-0 relative w-full">
                     <div className="absolute inset-[-1px_0_0_0]">
-                      <img 
-                        alt="" 
-                        className="block max-w-none size-full" 
-                        src="https://www.figma.com/api/mcp/asset/39357add-4ab0-40f9-a486-b06511745704" 
-                      />
+                      <div 
+                        className="block h-px" 
+                        style={{ width: '162.5px', background: '#D3D4D6' }}
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -79,11 +78,10 @@ export default function SignUpForm() {
                 <div className="flex-none rotate-[180deg] w-full">
                   <div className="h-0 relative w-full">
                     <div className="absolute inset-[-1px_0_0_0]">
-                      <img 
-                        alt="" 
-                        className="block max-w-none size-full" 
-                        src="https://www.figma.com/api/mcp/asset/39357add-4ab0-40f9-a486-b06511745704" 
-                      />
+                      <div 
+                        className="block h-px" 
+                        style={{ width: '162.5px', background: '#D3D4D6' }}
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -150,35 +148,28 @@ export default function SignUpForm() {
               </div>
 
               {/* Confirm Password Input */}
-              <div className="content-stretch flex flex-col gap-3 items-start relative shrink-0 w-full">
-                <div className="bg-white border border-grey-200 border-solid content-stretch flex flex-col items-start overflow-visible px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-[10px] relative rounded-lg shrink-0 w-full focus-within:border-primary-base transition-colors">
-                  <div className={`content-stretch flex flex-col ${confirmPassword ? 'gap-[2px]' : 'gap-0'} items-start justify-center relative shrink-0 w-full`}>
-                    {confirmPassword && (
-                      <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500">
-                        Confirm password*
-                      </label>
-                    )}
-                    <div className="content-stretch flex items-center gap-2 relative shrink-0 w-full">
-                      <input
-                        type={showConfirmPassword ? 'text' : 'password'}
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        placeholder={confirmPassword ? '' : 'Confirm password*'}
-                        className={`font-satoshi font-medium leading-normal not-italic relative flex-1 text-sm sm:text-base outline-none bg-transparent ${confirmPassword ? 'text-grey-700' : 'text-grey-300 placeholder:text-grey-300'}`}
-                        required
+              <div className="h-12 sm:h-[47px] relative shrink-0 w-full">
+                <div className="absolute bg-white border border-grey-200 border-solid content-stretch flex flex-col items-start left-0 overflow-clip px-3 sm:px-[14px] py-2.5 sm:py-3 md:py-[12px] rounded-lg top-0 w-full focus-within:border-primary-base transition-colors">
+                  <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
+                    <input
+                      type={showConfirmPassword ? 'text' : 'password'}
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      placeholder="Confirm password*"
+                      className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-sm sm:text-base text-grey-300 w-full outline-none bg-transparent placeholder:text-grey-300"
+                      required
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                      className="h-5 sm:h-[23px] relative shrink-0 w-5 sm:w-6 cursor-pointer hover:opacity-70 transition-opacity ml-2"
+                    >
+                      <img 
+                        alt={showConfirmPassword ? 'Hide password' : 'Show password'} 
+                        className="block max-w-none size-full" 
+                        src="https://www.figma.com/api/mcp/asset/9eb3833e-eaf9-433e-bb81-979399212e00" 
                       />
-                      <button
-                        type="button"
-                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                        className="h-5 sm:h-[23px] relative shrink-0 w-5 sm:w-6 cursor-pointer hover:opacity-70 transition-opacity"
-                      >
-                        <img 
-                          alt={showConfirmPassword ? 'Hide password' : 'Show password'} 
-                          className="block max-w-none size-full" 
-                          src="https://www.figma.com/api/mcp/asset/9eb3833e-eaf9-433e-bb81-979399212e00" 
-                        />
-                      </button>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>

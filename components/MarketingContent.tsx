@@ -31,7 +31,12 @@ const companies = [
 export default function MarketingContent() {
   return (
     <div className="content-stretch flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 items-center justify-start relative shrink-0 w-full lg:w-[850px] px-0 py-2 sm:py-3 md:py-4 lg:py-4 bg-transparent rounded-2xl lg:rounded-none overflow-hidden">
-      <div className="content-stretch flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 items-center relative shrink-0 w-full">
+      {/* Background blurred circles positioned vertically from top to bottom - responsive and extends from header to bottom */}
+      <div className="fixed right-0 top-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[33.33vh] pointer-events-none hidden lg:block" style={{ borderRadius: '339px', background: '#87ABFF', filter: 'blur(250px)' }}></div>
+      <div className="fixed right-0 top-[33.33vh] w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[33.33vh] pointer-events-none hidden lg:block" style={{ borderRadius: '338px', background: '#C3DDFF', filter: 'blur(250px)' }}></div>
+      <div className="fixed right-0 top-[66.66vh] w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[33.33vh] pointer-events-none hidden lg:block" style={{ borderRadius: '338px', background: '#AFD2FF', filter: 'blur(250px)' }}></div>
+      
+      <div className="content-stretch flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 items-center relative shrink-0 w-full z-10">
         {/* Info Header */}
         <div className="content-stretch flex flex-col font-satoshi font-bold gap-2 sm:gap-3 items-center leading-tight not-italic relative shrink-0 text-center w-full max-w-[668px]">
           <div className="relative shrink-0 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[32px] text-grey-700 w-full max-w-[656px]">

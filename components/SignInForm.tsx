@@ -53,16 +53,15 @@ export default function SignInForm() {
             </button>
 
             {/* Divider */}
-            <div className="content-stretch flex gap-3 sm:gap-4 items-center justify-center relative shrink-0 w-full">
+            <div className="content-stretch flex items-center justify-center relative shrink-0 w-full" style={{ gap: '16px', alignSelf: 'stretch' }}>
               <div className="flex flex-[1_0_0] items-center justify-center min-h-px min-w-px relative shrink-0">
                 <div className="flex-none rotate-[180deg] w-full">
                   <div className="h-0 relative w-full">
                     <div className="absolute inset-[-1px_0_0_0]">
-                      <img 
-                        alt="" 
-                        className="block max-w-none size-full" 
-                        src="https://www.figma.com/api/mcp/asset/d0f7edbf-aee6-4a64-b980-36ca4ef41a32" 
-                      />
+                      <div 
+                        className="block h-px" 
+                        style={{ width: '162.5px', background: '#D3D4D6' }}
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -76,11 +75,10 @@ export default function SignInForm() {
                 <div className="flex-none rotate-[180deg] w-full">
                   <div className="h-0 relative w-full">
                     <div className="absolute inset-[-1px_0_0_0]">
-                      <img 
-                        alt="" 
-                        className="block max-w-none size-full" 
-                        src="https://www.figma.com/api/mcp/asset/d0f7edbf-aee6-4a64-b980-36ca4ef41a32" 
-                      />
+                      <div 
+                        className="block h-px" 
+                        style={{ width: '162.5px', background: '#D3D4D6' }}
+                      ></div>
                     </div>
                   </div>
                 </div>

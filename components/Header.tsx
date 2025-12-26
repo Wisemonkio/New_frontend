@@ -12,13 +12,8 @@ export default function Header({ isSignUpPage = false }: HeaderProps) {
   const buttonText = isSignUpPage ? 'Log in' : 'Sign up'
   const buttonHref = isSignUpPage ? '/' : '/signup'
   
-  const arrowIcon1 = isSignUpPage
-    ? 'https://www.figma.com/api/mcp/asset/9b2a687e-97b7-4195-b812-860b4febb690'
-    : 'https://www.figma.com/api/mcp/asset/a4e28d06-7ce9-419f-afd5-c4b5eab13ebd'
-  
-  const arrowIcon2 = isSignUpPage
-    ? 'https://www.figma.com/api/mcp/asset/aa36799f-ab20-4962-8ac2-ffce38264e75'
-    : 'https://www.figma.com/api/mcp/asset/cd6539d7-2bae-4b6d-81c1-74309177c576'
+  const arrowIcon1 = '/images/arrow-icon-1.svg'
+  const arrowIcon2 = '/images/arrow-icon-2.svg'
 
   return (
     <>
@@ -38,28 +33,16 @@ export default function Header({ isSignUpPage = false }: HeaderProps) {
             <p className="leading-normal">{buttonText}</p>
           </div>
         </div>
-        <div className="relative shrink-0 size-4 sm:size-5 md:size-6 pointer-events-none">
-          <div className="absolute inset-[12.61%_12.73%_12.76%_46.9%]">
-            <div className="absolute inset-[-1.67%_-3.1%]">
-              <img 
-                alt="" 
-                className="block max-w-none size-full pointer-events-none" 
-                src={arrowIcon1} 
-              />
-            </div>
-          </div>
-          <div className="absolute inset-[32.66%_33.59%_32.66%_12.47%]">
-            <div className="absolute inset-[-3.6%_-2.34%_-3.6%_-2.32%]">
-              <img 
-                alt="" 
-                className="block max-w-none size-full pointer-events-none" 
-                src={arrowIcon2} 
-              />
-            </div>
-          </div>
+        <div className="relative shrink-0 size-5 sm:size-6 md:size-7 lg:size-8 flex items-center justify-center pointer-events-none">
+          <img 
+            alt="" 
+            className="block max-w-none w-full h-full object-contain pointer-events-none" 
+            src={arrowIcon1} 
+          />
         </div>
       </Link>
     </>
   )
 }
+
 
