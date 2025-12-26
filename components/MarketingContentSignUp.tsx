@@ -30,15 +30,15 @@ const companies = [
 
 export default function MarketingContentSignUp() {
   return (
-    <div className="content-stretch flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 items-center justify-start relative shrink-0 w-full lg:w-[850px] px-0 py-2 sm:py-3 md:py-4 lg:py-4 bg-transparent rounded-2xl lg:rounded-none overflow-hidden">
+    <div className="content-stretch flex flex-col gap-2 sm:gap-3 md:gap-4 lg:gap-5 items-center justify-start relative shrink-0 w-full lg:w-[850px] px-2 sm:px-3 md:px-4 lg:px-0 py-2 sm:py-3 bg-transparent rounded-2xl lg:rounded-none overflow-hidden">
       {/* Background blurred circles positioned vertically from top to bottom - responsive and extends from header to bottom */}
       <div className="fixed right-0 top-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[33.33vh] pointer-events-none hidden lg:block" style={{ borderRadius: '339px', background: '#87ABFF', filter: 'blur(250px)' }}></div>
       <div className="fixed right-0 top-[33.33vh] w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[33.33vh] pointer-events-none hidden lg:block" style={{ borderRadius: '338px', background: '#C3DDFF', filter: 'blur(250px)' }}></div>
       <div className="fixed right-0 top-[66.66vh] w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[33.33vh] pointer-events-none hidden lg:block" style={{ borderRadius: '338px', background: '#AFD2FF', filter: 'blur(250px)' }}></div>
       
-      <div className="content-stretch flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 items-center relative shrink-0 w-full z-10">
+      <div className="content-stretch flex flex-col gap-2 sm:gap-3 md:gap-4 items-center relative shrink-0 w-full z-10">
         {/* Info Header */}
-        <div className="content-stretch flex flex-col font-satoshi font-bold gap-2 sm:gap-3 items-center leading-tight not-italic relative shrink-0 text-center w-full max-w-[668px]">
+        <div className="content-stretch flex flex-col font-satoshi font-bold gap-1.5 sm:gap-2 items-center leading-tight not-italic relative shrink-0 text-center w-full max-w-[668px]">
           <div className="relative shrink-0 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[32px] text-grey-700 w-full max-w-[656px]">
             <p className="mb-0">Hire in India. Fast, Compliant,</p>
             <p>Fully Managed.</p>
@@ -49,11 +49,11 @@ export default function MarketingContentSignUp() {
         </div>
 
         {/* Trusted Companies */}
-        <div className="content-stretch flex flex-col gap-2 sm:gap-3 md:gap-4 items-center relative shrink-0 w-full">
-          <p className="font-satoshi font-bold leading-normal not-italic relative shrink-0 text-xs sm:text-sm md:text-base lg:text-lg text-grey-600 text-center w-full">
+        <div className="content-stretch flex flex-col gap-1.5 sm:gap-2 items-center relative shrink-0 w-full">
+          <p className="font-satoshi font-bold leading-normal not-italic relative shrink-0 text-xs sm:text-sm md:text-base text-grey-600 text-center w-full">
             Trusted by 200+ Global Teams
           </p>
-          <div className="content-stretch flex flex-col gap-1.5 sm:gap-2 items-center justify-center relative shrink-0 w-full overflow-x-auto">
+          <div className="content-stretch flex flex-col gap-1 sm:gap-1.5 items-center justify-center relative shrink-0 w-full overflow-x-auto">
             {/* First Row */}
             <div className="content-stretch flex gap-1.5 sm:gap-2 md:gap-[8px] items-center relative shrink-0 w-full justify-center flex-wrap">
               {companies.slice(0, 3).map((company, index) => (
