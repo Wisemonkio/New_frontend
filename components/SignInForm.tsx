@@ -75,7 +75,7 @@ export default function SignInForm() {
           {/* Form Header */}
           <div className="content-stretch flex flex-col gap-1 items-center relative shrink-0 w-full">
             <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-              <h1 className="font-satoshi font-bold leading-tight not-italic relative shrink-0 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[32px] text-grey-700 whitespace-nowrap">
+              <h1 className="font-satoshi font-bold leading-tight not-italic relative shrink-0 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[28px] text-grey-700 whitespace-nowrap">
                 Welcome back to Wisemonk
               </h1>
             </div>
