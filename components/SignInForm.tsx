@@ -112,7 +112,7 @@ export default function SignInForm() {
 
               {/* Password Input */}
               <div className="content-stretch flex flex-col gap-3 items-start relative shrink-0 w-full">
-                <div className="bg-white border border-grey-200 border-solid content-stretch flex flex-col items-start overflow-visible px-3 sm:px-[14px] py-2 sm:py-2.5 md:py-[10px] relative rounded-lg shrink-0 w-full focus-within:border-primary-base transition-colors">
+                <div className="bg-white border border-grey-200 border-solid content-stretch flex flex-col items-start overflow-visible px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-[10px] relative rounded-lg shrink-0 w-full focus-within:border-primary-base transition-colors">
                   <div className={`content-stretch flex flex-col ${password ? 'gap-[2px]' : 'gap-0'} items-start justify-center relative shrink-0 w-full`}>
                     {password && (
                       <label className="font-satoshi font-medium leading-normal not-italic relative shrink-0 text-xs sm:text-sm text-grey-500">
